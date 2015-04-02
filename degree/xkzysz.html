@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="keywords" content="合肥工业大学,学位管理信息系统" />
+	<meta name="description" content="合肥工业大学学位管理信息系统" />
+	<meta name="author" content="合肥工业大学HD" />
+	<meta name="Robots" content="all">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../images/favicon.ico"  type="image/x-icon"/>
+	<title>合肥工业大学学位管理信息系统</title>
+
+	<!-- 全局样式，必须 -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+	<!--[if IE 7]>
+	  <link rel="stylesheet" href="css/font-awesome-ie7.min.css" />
+	<![endif]-->
+
+	<!-- 字体 -->
+	<link rel="stylesheet" href="css/fonts.googleapis.css" />
+
+	<!-- ace 样式 -->
+	<link rel="stylesheet" href="css/ace.min.css" />
+	
+	<!-- 自定义配置css -->
+	<link rel="stylesheet" href="css/mycss.css" />
+
+	<!--[if lte IE 8]>
+	  <link rel="stylesheet" href="css/ace-ie.min.css" />
+	<![endif]-->
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<!-- 头部 -->
+	<div class="navbar navbar-default" id="navbar">
+		<script type="text/javascript">
+			try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+		</script>
+		<div class="navbar-container" id="navbar-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+			<div class="navbar-header pull-left">
+				<a href="index.html" class="navbar-brand" title="学位管理信息系统">
+					<small>
+						<i id="hlogo"></i>
+						<h3 id="htitle">学位管理信息系统</h3>
+					</small>
+				</a>
+			</div>
+			<div class="navbar-header pull-right" role="navigation">
+				<small id="hheadRight">您好，<span id="huser">系统管理员</span>！您已第<span id="htimes">2619</span>次登录本系统</small>
+			</div>
+		</div>
+	</div><!-- 头部END -->
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+		</script>
+		<div class="main-container-inner">
+			<a class="menu-toggler" id="menu-toggler" href="javascript:;">
+				<span class="menu-text"></span>
+			</a>
+			<!-- 左侧导航 -->
+			<div class="sidebar" id="sidebar">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="index.html">
+							<i class="icon-home"></i>
+							<span class="menu-text"> 系统管理首页 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-cog"></i>
+							<span class="menu-text"> 系统参数设置 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-edit"></i>
+							<span class="menu-text"> 系统信息设置 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-user"></i>
+							<span class="menu-text"> 用户权限管理 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-smile"></i>
+							<span class="menu-text"> 登录用户管理 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-signin"></i>
+							<span class="menu-text"> 基本数据导入 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="dsjbxx.html">
+							<i class="icon-group"></i>
+							<span class="menu-text"> 导师基本信息 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="xkzysz.html">
+							<i class="icon-book"></i>
+							<span class="menu-text"> 学科专业设置 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-info-sign"></i>
+							<span class="menu-text"> 特殊情况处理 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-wrench"></i>
+							<span class="menu-text"> 系统数据检查 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-signout"></i>
+							<span class="menu-text"> 系统数据导出 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-cloud-upload"></i>
+							<span class="menu-text"> 系统数据备份 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-trash"></i>
+							<span class="menu-text"> 历史数据清理 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-question-sign"></i>
+							<span class="menu-text"> 系统帮助 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:;">
+							<i class="icon-pencil"></i>
+							<span class="menu-text"> 修改密码 </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="login.html">
+							<i class="icon-off"></i>
+							<span class="menu-text"> 退出系统 </span>
+						</a>
+					</li>
+				</ul>
+
+				<div class="sidebar-collapse" id="sidebar-collapse">
+					<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+				</div>
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div><!-- 左侧导航END -->
+
+			<div class="main-content">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<script type="text/javascript">
+						try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+					</script>
+
+					<ul class="breadcrumb">
+						<li>
+							<i class="icon-home home-icon"></i>
+							<a href="index.html">系统</a>
+						</li>
+						<li class="active">学科专业设置（选择专业类型后再操作）</li>
+					</ul><!-- .breadcrumb -->
+				</div>
+
+				<div class="page-content">
+
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+
+							<!-- 搜索 -->								
+							<div class="row">
+									<!-- 联动select -->
+									<div class="selectList col-xs-12">
+										<select class="one col-md-2">
+											<option>请选择专业</option>
+										</select>
+										<select class="two col-md-2">
+											<option>请选择学位</option>
+										</select>
+										<select class="three col-md-2">
+											<option>请选择学院</option>
+										</select>
+										<select class="four col-md-2">
+											<option>请选择分会</option>
+										</select>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12 selectList">
+									<form class="form-horizontal form-h" role="form" method="post" action="#">
+										<input type="text" class="col-xs-10 col-sm-2" />
+										<input type="submit"class="col-xs-10 col-sm-1" value="搜索查询" />
+										<input type="button"class="col-xs-10 col-sm-1" value="添加专业" />
+										<input type="button"class="col-xs-10 col-sm-1" value="导出专业" />
+									</form>
+								</div>
+							</div>	
+
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="table-responsive">
+										<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+											<thead>
+												<tr>
+													<th>学科门类</th>
+													<th>学科（专业）名称</th>
+													<th>所属学院名称</th>
+													<th>所属学位分会</th>
+													<th>设置</th>
+													<th>类型数</th>
+													<th>操作</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>工程硕士</td>
+													<td>机械工程</td>
+													<td>机械学院</td>
+													<td>机械学院分会</td>
+													<td>标准</td>
+													<td>1</td>
+													<td>
+														<a href="javascript:;" class="hchange">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
+														<a href="javascript:;" class="hdelete">删除</a>
+													</td>
+												</tr>
+
+												<tr>
+													<td>工程硕士</td>
+													<td>机械工程</td>
+													<td>机械学院</td>
+													<td>机械学院分会</td>
+													<td>标准</td>
+													<td>1</td>
+													<td>
+														<a href="javascript:;" class="hchange">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
+														<a href="javascript:;" class="hdelete">删除</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div><!-- /.table-responsive -->
+								</div><!-- /span -->
+							</div><!-- /row -->
+
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container-inner -->
+		<a href="javascript:;" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+			<i class="icon-double-angle-up icon-only bigger-110"></i>
+		</a><!-- ToUp -->
+	</div><!-- /.main-container -->
+
+	<!-- 左侧收缩杆 -->
+	<script src="js/ace-extra.min.js"></script>
+	
+	<!-- jQuery -->	
+	<!--[if !IE]> -->
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		if("ontouchend" in document) document.write("<script src='js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+	</script>
+	
+	<!-- bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- ace -->
+	<script src="js/ace-elements.min.js"></script>
+	<script src="js/ace.min.js"></script>
+
+	<!--多级联动-->
+	<script type="text/javascript" src="js/selectList.js"></script>
+	<!-- 获取专业学科json数据 -->
+	<script type="text/javascript">
+		holltonList("js/jsonData/zyxkListData.json",".selectList");
+	</script>
+</body>
+</html>
