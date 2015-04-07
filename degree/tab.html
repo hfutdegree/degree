@@ -23,10 +23,13 @@
 	  <link rel="stylesheet" href="css/font-awesome-ie7.min.css" />
 	<![endif]-->
 
+	<!-- TAB -->
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.full.min.css" />
+
 	<!-- 字体 -->
 	<link rel="stylesheet" href="css/fonts.googleapis.css" />
 
-	<!-- ace styles -->
+	<!-- ace 样式 -->
 	<link rel="stylesheet" href="css/ace.min.css" />
 	
 	<!-- 自定义配置css -->
@@ -202,7 +205,6 @@
 				</script>
 			</div><!-- 左侧导航END -->
 
-			<!-- 右侧主体 -->
 			<div class="main-content">
 				<div class="breadcrumbs" id="breadcrumbs">
 					<script type="text/javascript">
@@ -214,36 +216,46 @@
 							<i class="icon-home home-icon"></i>
 							<a href="index.html">系统</a>
 						</li>
-						<li class="active">系统管理首页</li>
+						<li class="active">学科专业设置（选择专业类型后再操作）</li>
 					</ul><!-- .breadcrumb -->
 				</div>
 
 				<div class="page-content">
 
 					<div class="row">
-						<div class="col-xs-12">
-							<!-- PAGE CONTENT BEGINS -->
-								<div class="row">
-								<div class="col-xs-12 col-sm-12">
-									<div class="widget-box">
-										<div class="widget-header" style="height:0;min-height:0;"></div>
-										<div class="widget-body">
-											<div class="widget-main hwidget">
-												<p>欢迎使用《学位管理信息系统 V3.0版》！您现在已登陆"学位管理信息系统—系统管理员子系统"。</p>
-												<h5>一、使用对象</h5> 
-												<p>本系统功能仅适用于"系统管理员"使用！欢迎使用《学位管理信息系统 V3.0版》！您现在已登陆"学位管理信息系统—系统管理员子系统"。欢迎使用《学位管理信息系统 V3.0版》！您现在已登陆"学位管理信息系统—系统管理员子系统"。</p>
-											</div>
-										</div>
-									</div>
-								</div><!-- /span -->
+						<div class="col-sm-12">
+							<div id="tabs">
+								<ul>
+									<li>
+										<a href="#tabs-1">选项1</a>
+									</li>
+
+									<li>
+										<a href="#tabs-2">选项2</a>
+									</li>
+
+									<li>
+										<a href="#tabs-3">选项3</a>
+									</li>
+								</ul>
+
+								<div id="tabs-1">
+									<p>学位管理信息系统</p>
+								</div>
+
+								<div id="tabs-2">
+									<p>学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统学位管理信息系统</p>
+								</div>
+
+								<div id="tabs-3">
+									<p>学位管理信息系统学位管理信息系统</p>
+								</div>
 							</div>
-							
-							</div><!-- PAGE CONTENT ENDS -->
 						</div><!-- /.col -->
 					</div><!-- /.row -->
 				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
 		</div><!-- /.main-container-inner -->
-
 		<a href="javascript:;" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 			<i class="icon-double-angle-up icon-only bigger-110"></i>
 		</a><!-- ToUp -->
@@ -264,10 +276,28 @@
 	<script type="text/javascript">
 		if("ontouchend" in document) document.write("<script src='js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 	</script>
+	
+	<!-- bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
 
-	<!-- ace scripts -->
+	<!-- ace -->
 	<script src="js/ace-elements.min.js"></script>
 	<script src="js/ace.min.js"></script>
+
+	<!-- 本页面TAB -->
+	<script src="js/jquery-ui-1.10.3.full.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($) {
+			$( "#tabs" ).tabs();				
+		});
+	</script>
+
+	<!--多级联动-->
+	<script type="text/javascript" src="js/selectList.js"></script>
+	<!-- 获取专业学科json数据 -->
+	<script type="text/javascript">
+		holltonList("js/jsonData/zyxkListData.json",".selectList");
+	</script>
+
 </body>
 </html>
