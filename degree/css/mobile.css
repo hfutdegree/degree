@@ -14,10 +14,28 @@
 }
 .nav-hl{
 	position:relative;
-	left: -30px;
-	top: -7px;
+	left: -15px;
+	top: -10px;
 	height: 25px;
-	line-height: 25px;}
+	line-height: 25px;
+	margin: 0;}
+.nav-hl li{
+	width: auto;
+	padding: 0 14px;
+	height: 25px;
+}
+.nav-hl li .menu-text{
+	display:none;
+}
+.nav-hl li a:link,.nav-hl li a:visited{
+	background: none;
+	width: auto;
+	height: 25px;
+}
+.nav-hl li a:hover{
+	color:#333;
+}
+
 .hicon-gradution,.icon-briefcase,.icon-credit-card,.icon-comment{
 	display:none!important;}
 .main-container-h{ min-width:360px;}

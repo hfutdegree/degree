@@ -1,4 +1,4 @@
-#hlogo{
+﻿#hlogo{
 	background-image:url(../images/logo.min.min.png);
 	background-repeat:no-repeat;
 	width:44px;
@@ -135,22 +135,36 @@ select.form-control{ padding:0;width:274px;color: #444;}
 }
 .nav-hl{
 	float: right;
-	height: 92px;
-	margin: 0;
-	line-height: 92px;}
+	margin-top: 40px;}
 .nav-hl li{
 	float: left;
-	font-size: 14px;}
+	font-size: 14px;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 5px;
+	overflow: hidden;
+	border-radius: 3px;}
+
+.nav-hl li a:link,.nav-hl li a:visited,.nav-hl li .menu-text{
+	display: block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	color: #555;
+	font-size: 14px;
+	text-align: center;
+	padding:0;
+}
+.nav-hl li .menu-text{
+	background: url(../images/slideBg.png) no-repeat left top;
+}
 .nav-hl li a:link,.nav-hl li a:visited{
-	color: #666;
-	display: inline;
-	padding: 0px 15px;
-	background:none;}
-.nav-hl li a:hover{
-	color: #333;
-	background:none;}
+	background: url(../images/slideBg.png) no-repeat left bottom;
+}
 .hicon-gradution{
-	background:url(../images/icon-gradution.jpg) no-repeat 0 1px;
+	background:url(../images/icon-gradution.png) no-repeat 0 1px;
 	width: 17px;
 	height: 12px;
 	display: inline-block;}
@@ -238,7 +252,6 @@ select.form-control-h{
 	height: 20px;}  
 .date-h-r{
 	float:right;
-	margin-right:17px;
 	color:#888;
 	font-size:12px;}
 .hfoot{

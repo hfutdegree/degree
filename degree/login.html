@@ -45,30 +45,22 @@
 					</small>
 				</a>
 			</div>
-			<ul class="nav nav-hl">
+			<ul class="nav nav-hl" id="nav">
 				<li>
-					<a href="xwgs.html" target="_blank">
-						<i class="hicon-gradution"></i>
-						<span class="menu-text"> 学位公示 </span>
-					</a>
+					<span class="menu-text" style="margin-top:0px;"><i class="hicon-gradution"></i> 学位公示</span>
+					<a href="xwgs.html" target="_blank"><i class="hicon-gradution"></i> 学位公示</a>
 				</li>
 				<li>
-					<a href="javascript:;" target="_blank">
-						<i class="icon-briefcase"></i>
-						<span class="menu-text"> 导师档案 </span>
-					</a>
+					<span class="menu-text" style="margin-top:0px;"><i class="icon-briefcase"></i> 导师档案</span>
+					<a href="xwgs.html" target="_blank"><i class="icon-briefcase"></i> 导师档案</a>
 				</li>
 				<li>
-					<a href="javascript:;" target="_blank">
-						<i class="icon-credit-card"></i>
-						<span class="menu-text"> 证书补办 </span>
-					</a>
+					<span class="menu-text" style="margin-top:0px;"><i class="icon-credit-card"></i> 证书补办</span>
+					<a href="xwgs.html" target="_blank"><i class="icon-credit-card"></i> 证书补办</a>
 				</li>
 				<li>
-					<a href="javascript:;" target="_blank">
-						<i class="icon-comment"></i>
-						<span class="menu-text"> 帮助 </span>
-					</a>
+					<span class="menu-text" style="margin-top:0px;"><i class="icon-comment"></i> 帮助</span>
+					<a href="xwgs.html" target="_blank"><i class="icon-comment"></i> 帮助</a>
 				</li>
 			</ul>
 		</div>
@@ -195,6 +187,41 @@
 			<li>Tel:0551-62901620&nbsp;&nbsp;Email:<a href="mailto:ahtkb@163.com">ahtkb@163.com</a></li>
 		</ul>
 	</div>
-	
+
+	<script type="text/javascript">
+		var aNavLi=document.getElementById('nav').getElementsByTagName('li');
+		var aNavSpan=document.getElementById('nav').getElementsByTagName('span');
+		var speed=15;   /*越小越快*/
+		
+		function start(objLi,objSpan,timer){
+			objLi.onmouseover=function(){
+				clearInterval(timer);
+	            timer=setInterval(
+	            	function(){
+	            		objSpan.style.marginTop=parseInt(objSpan.style.marginTop)-2+'px';
+	            		if(parseInt(objSpan.style.marginTop)<=-30){
+			            	clearInterval(timer);
+			            };
+	            	},speed);
+			}
+
+			objLi.onmouseout=function(){
+				clearInterval(timer);
+	            timer=setInterval(
+	            	function(){
+	            		objSpan.style.marginTop=parseInt(objSpan.style.marginTop)+2+'px';
+	            		if(parseInt(objSpan.style.marginTop)>=0){
+			            	clearInterval(timer);
+			            };
+	            	},speed);
+			}
+		}
+
+		var timer0; var timer1; var timer2; var timer3;
+		start(aNavLi[0],aNavSpan[0],timer0);
+		start(aNavLi[1],aNavSpan[1],timer1);
+		start(aNavLi[2],aNavSpan[2],timer2);
+		start(aNavLi[3],aNavSpan[3],timer3);
+	</script>
 </body>
 </html>
