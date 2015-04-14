@@ -177,15 +177,16 @@ select.form-control{ padding:0;width:274px;color: #444;}
 	margin:0px auto;}
 .sidebar-h{
 	background:url(../images/rightBottonBG.png) repeat-x 0 240px #e8f0f3;
-	width:663px;
-	height:444px;
+	width:663px; *+width:623px;
+	height:444px; *+height:404px;
 	border-radius:4px;
 	float:left;
 	padding:20px;
 	margin-right: 36px;
 	position:relative;}
 .sidebar-h-r{
-	width:300px;
+	width:300px; *+width:260px;
+	height:444px; *+height:424px;
 	margin-right:0;
 	padding: 0 20px 20px;}
 .sidebar-h h4{ color:#1D658B; font-weight:bold;}
@@ -196,8 +197,8 @@ select.form-control{ padding:0;width:274px;color: #444;}
 	bottom:0;
 	width: 623px;}
 .sidebar-h-r input{
-	height:36px;
-	width:260px;
+	width:260px; *+width:224px;
+	height:36px; *+height:24px;
 	border-radius:4px!important;
 	padding-left: 30px;}
 .add-on{
@@ -221,6 +222,7 @@ select.form-control-h{
 	font-size: 12px;}
 .hpsw{
 	float: left;
+	width:65px;
 	line-height: 46px;
 	margin-left: 30px;}
 .controls .btn-hl{
@@ -232,6 +234,7 @@ select.form-control-h{
 	font-size: 14px;
 	height: 32px;}
 .controls .btn-hl:hover{ background: #3A7CB3;}
+.controls input[type="submit"].btn-hl{ *+float:left;}
 .controls .btn-hr{
 	width: 100px;
 	padding: 0;

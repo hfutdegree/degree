@@ -123,7 +123,7 @@
 						<div class="controls">
 							<div class="input-prepend">
 								<span class="add-on"><i class="icon-user"></i></span>
-								<input type="text" placeholder="用户名"required />
+                                <input type="text" data-ui="u-placeholder|用户名|keydown|#A9A9A9" required />
 							</div>
 						</div>
 					</div>
@@ -132,7 +132,7 @@
 						<div class="controls">
 							<div class="input-prepend">
 								<span class="add-on"><i class="icon-lock"></i></span>
-								<input type="password" placeholder="密码" required />
+                                <input type="password" data-ui="u-placeholder|密 码|keydown|#A9A9A9" required />
 							</div>
 						</div>
 					</div>
@@ -162,6 +162,7 @@
 						</div>
 					</div>
 			</form>
+            	<div style="clear:both"></div>
 				<div class="hbot hbot-r">
 					<h4>通知公告</h4>
 					<ul>
@@ -187,7 +188,16 @@
 			<li>Tel:0551-62901620&nbsp;&nbsp;Email:<a href="mailto:ahtkb@163.com">ahtkb@163.com</a></li>
 		</ul>
 	</div>
+<!-- jQuery -->	
+	<!--[if !IE]> -->
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<!-- <![endif]-->
 
+	<!--[if IE]>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<![endif]-->
+    
+<!--右侧链接翻转-->
 	<script type="text/javascript">
 		var aNavLi=document.getElementById('nav').getElementsByTagName('li');
 		var aNavSpan=document.getElementById('nav').getElementsByTagName('span');
@@ -222,6 +232,163 @@
 		start(aNavLi[1],aNavSpan[1],timer1);
 		start(aNavLi[2],aNavSpan[2],timer2);
 		start(aNavLi[3],aNavSpan[3],timer3);
+	</script>
+<!--解决IE placeholder-->
+	<script>
+	~function(win, $) {
+	
+	$.uiParse = function(action) {
+		var arr = action.split('|').slice(1)
+		var len = arr.length
+		var res = [], exs
+		var boo = /^(true|false)$/
+		for (var i = 0; i < len; i++) {
+			var item = arr[i]
+			if (item == '&') {
+				item = undefined
+			} else if (exs = item.match(boo)) {
+				item = exs[0] == 'true' ? true : false
+			}
+			res[i] = item
+		}
+		return res
+	};
+	
+	}(window, window.jQuery);
+	
+	~function() {
+		
+	$.fn.placeholder = function(option, callback) {
+		var settings = $.extend({
+			word: '',
+			color: '#999',
+			evtType: 'focus',
+			zIndex: 20,
+			diffPaddingLeft: 3
+		}, option)
+	
+		function bootstrap($that) {
+			// some alias 
+			var word    = settings.word
+			var color   = settings.color
+			var evtType = settings.evtType
+			var zIndex  = settings.zIndex
+			var diffPaddingLeft = settings.diffPaddingLeft
+	
+			// default css
+			var offset = $that.offset()
+			var top    = offset.top
+			var left   = offset.left
+			var width       = $that.outerWidth()
+			var height      = $that.outerHeight()
+			var fontSize    = $that.css('font-size')
+			var fontFamily  = $that.css('font-family')
+			var paddingLeft = $that.css('padding-left')
+	
+			// process
+			paddingLeft = parseInt(paddingLeft, 10) + diffPaddingLeft
+	
+			// redner 
+			var $placeholder = $('<span>')
+			$placeholder.css({
+				position: 'absolute',
+				zIndex: '20',
+				top: top,
+				left: left,
+				color: color,
+				width: (width - paddingLeft) + 'px',
+				height: height + 'px',
+				fontSize: fontSize,
+				paddingLeft: paddingLeft + 'px',
+				fontFamily: fontFamily
+			}).text(word).hide()
+	
+			// textarea 不加line-heihgt属性
+			if ($that.is('input')) {
+				$placeholder.css({
+					lineHeight: height + 'px'
+				})
+			}
+			$placeholder.appendTo(document.body)
+	
+			// 内容为空时才显示，比如刷新页面输入域已经填入了内容时
+			var val = $that.val()
+			if (val == '') {
+				$placeholder.show()
+			}
+	
+			function hideAndFocus() {
+				$placeholder.hide()
+				$that[0].focus()
+			}
+			function asFocus() {
+				$placeholder.click(hideAndFocus)
+				// IE有些bug，原本不用加此句
+				$that.click(hideAndFocus)
+				$that.blur(function() {
+					var txt = $that.val()
+					if (txt == '') {
+						$placeholder.show()
+					}
+				})
+			}
+			function asKeydown() {
+				$placeholder.click(function() {
+					$that[0].focus()
+				})
+			}
+	
+			if (evtType == 'focus') {
+				asFocus()
+			} else if (evtType == 'keydown') {
+				asKeydown()
+			}
+	
+			$that.keyup(function() {
+				var txt = $that.val()
+				if (txt == '') {
+					$placeholder.show()
+				} else {
+					$placeholder.hide()
+				}
+			})
+		}
+	
+		return this.each(function() {
+			var $elem = $(this)
+			bootstrap($elem)
+			if ($.isFunction(callback)) callback($elem)
+		})
+	}	
+	
+	
+	/*
+	 * 自动初始化，配置参数按照使用频率先后排序，即最经常使用的在前，不经常使用的往后，使用默认参数替代
+	 * 
+	 * 格式：data-ui="u-placeholder|word|evtType|color
+	 * 示例：data-ui="u-placeholder|默认文字
+	 *
+	 */
+	$(function() {
+		$('[data-ui^="u-placeholder"]').each(function() {
+			var $elem   = $(this)
+			var arr = $.uiParse($elem.attr('data-ui'))
+			// 文本
+			var word = arr[0]
+			// 事件
+			var evtType = arr[1]
+			// 文本颜色
+			var color = arr[2]
+			// create
+			$elem.placeholder({
+				word: word,
+				color: color,
+				evtType: evtType
+			})
+		})
+	})
+	
+	}();
 	</script>
 </body>
 </html>
